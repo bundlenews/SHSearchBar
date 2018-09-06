@@ -245,7 +245,7 @@ public class SHSearchBar: UIView, SHSearchBarDelegate {
   
     open func resetTextField() {
         textField.text = ""
-        delegate?.searchBar(searchBar, textDidChange: "")
+        delegate?.searchBar(self, textDidChange: "")
     }
   
     // MARK: - Cancel Button Management
@@ -255,7 +255,7 @@ public class SHSearchBar: UIView, SHSearchBarDelegate {
         let shouldCancel = delegate?.searchBarShouldCancel(self) ?? searchBarShouldCancel(self)
         if shouldCancel {
             resetTextField()
-            updateCancelButtonVisibility(show: true)
+            updateCancelButtonVisibility(makeVisible: true)
             textField.resignFirstResponder()
         }
     }
