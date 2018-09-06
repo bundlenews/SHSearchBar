@@ -255,7 +255,7 @@ public class SHSearchBar: UIView, SHSearchBarDelegate {
         let shouldCancel = delegate?.searchBarShouldCancel(self) ?? searchBarShouldCancel(self)
         if shouldCancel {
             resetTextField()
-            updateCancelButtonVisibility(makeVisible: true)
+            updateCancelButtonVisibility(makeVisible: false)
             textField.resignFirstResponder()
         }
     }
